@@ -101,27 +101,30 @@ class _TransactionState extends State {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          bottomSheet();
-        },
-        elevation: 10,
-        label: const Text('Add Taransaction'),
-        icon: Container(
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            color: Color.fromRGBO(14, 161, 125, 1),
+      floatingActionButton: Container(
+        margin: const EdgeInsets.all(30),
+        child: FloatingActionButton.extended(
+          onPressed: () {
+            bottomSheet();
+          },
+          elevation: 10,
+          label: const Text('Add Taransaction'),
+          icon: Container(
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Color.fromRGBO(14, 161, 125, 1),
+            ),
+            child: const Icon(
+              Icons.add_rounded,
+              size: 35,
+              weight: 100,
+              color: Colors.white,
+            ),
           ),
-          child: const Icon(
-            Icons.add_rounded,
-            size: 35,
-            weight: 100,
-            color: Colors.white,
-          ),
+          shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(70))),
+          backgroundColor: Colors.white,
         ),
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(70))),
-        backgroundColor: Colors.white,
       ),
     );
   }
@@ -253,35 +256,35 @@ class _TransactionState extends State {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 15,
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: const ButtonStyle(
-                      elevation: MaterialStatePropertyAll(2),
-                      minimumSize: MaterialStatePropertyAll(
-                        Size(123, 40),
+                  Container(
+                    margin: const EdgeInsets.all(20),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: const ButtonStyle(
+                        elevation: MaterialStatePropertyAll(2),
+                        minimumSize: MaterialStatePropertyAll(
+                          Size(123, 50),
+                        ),
+                        backgroundColor: MaterialStatePropertyAll(
+                          Color.fromRGBO(14, 161, 125, 1),
+                        ),
+                        shadowColor: MaterialStatePropertyAll(Colors.black),
                       ),
-                      backgroundColor: MaterialStatePropertyAll(
-                        Color.fromRGBO(14, 161, 125, 1),
-                      ),
-                      shadowColor: MaterialStatePropertyAll(Colors.black),
-                    ),
-                    child: Text(
-                      "Add",
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        color: Colors.white,
+                      child: Text(
+                        "Add",
+                        style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         );
