@@ -14,11 +14,17 @@ class _SignupScreenState extends State {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(50),
+        padding: EdgeInsets.only(
+            left: 50,
+            right: 50,
+            top: 100,
+            bottom: MediaQuery.of(context).viewInsets.bottom),
         child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.end,
+          // crossAxisAlignment: CrossAx
+          // isAlignment.end,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            const SizedBox(height: 50),
+            // const SizedBox(height: 50),
             SvgPicture.asset("./assets/SVGimages/rscard.svg"),
             const SizedBox(height: 50),
             SizedBox(

@@ -1,3 +1,4 @@
+import 'package:expense_manager/menudrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,10 +21,8 @@ class _TransactionState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const MyDrawer(),
       appBar: AppBar(
-        leading: const Icon(
-          Icons.menu,
-        ),
         title: Text(
           "June 2022",
           style: GoogleFonts.poppins(
