@@ -1,3 +1,6 @@
+import 'package:expense_manager/pichart.dart';
+import 'package:expense_manager/transaction_screen.dart';
+import 'package:expense_manager/trash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -37,32 +40,50 @@ class _MyDrawerState extends State {
             ),
           ),
           const SizedBox(height: 30),
-          Row(
-            children: [
-              const SizedBox(width: 25),
-              SvgPicture.asset(
-                './assets/SVGimages/transaction.svg',
-              ),
-              const SizedBox(width: 15),
-              Text(
-                "Transaction",
-                style: GoogleFonts.poppins(fontSize: 16),
-              ),
-            ],
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const Transaction(),
+                ),
+              );
+            },
+            child: Row(
+              children: [
+                const SizedBox(width: 25),
+                SvgPicture.asset(
+                  './assets/SVGimages/transaction.svg',
+                ),
+                const SizedBox(width: 15),
+                Text(
+                  "Transaction",
+                  style: GoogleFonts.poppins(fontSize: 16),
+                ),
+              ],
+            ),
           ),
           const SizedBox(height: 30),
-          Row(
-            children: [
-              const SizedBox(width: 25),
-              SvgPicture.asset(
-                './assets/SVGimages/pichart.svg',
-              ),
-              const SizedBox(width: 15),
-              Text(
-                "Graphs",
-                style: GoogleFonts.poppins(fontSize: 16),
-              ),
-            ],
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const MyPieChart(),
+                ),
+              );
+            },
+            child: Row(
+              children: [
+                const SizedBox(width: 25),
+                SvgPicture.asset(
+                  './assets/SVGimages/pichart.svg',
+                ),
+                const SizedBox(width: 15),
+                Text(
+                  "Graphs",
+                  style: GoogleFonts.poppins(fontSize: 16),
+                ),
+              ],
+            ),
           ),
           const SizedBox(height: 30),
           GestureDetector(
@@ -88,18 +109,27 @@ class _MyDrawerState extends State {
             ),
           ),
           const SizedBox(height: 30),
-          Row(
-            children: [
-              const SizedBox(width: 25),
-              SvgPicture.asset(
-                './assets/SVGimages/trash.svg',
-              ),
-              const SizedBox(width: 15),
-              Text(
-                "Trash",
-                style: GoogleFonts.poppins(fontSize: 16),
-              ),
-            ],
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const MyTrash(),
+                ),
+              );
+            },
+            child: Row(
+              children: [
+                const SizedBox(width: 25),
+                SvgPicture.asset(
+                  './assets/SVGimages/trash.svg',
+                ),
+                const SizedBox(width: 15),
+                Text(
+                  "Trash",
+                  style: GoogleFonts.poppins(fontSize: 16),
+                ),
+              ],
+            ),
           ),
           const SizedBox(height: 30),
           Row(
