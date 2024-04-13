@@ -17,7 +17,10 @@ class _MyCategoryState extends State {
       appBar: AppBar(
         title: Text(
           "Category",
-          style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500),
+          style: GoogleFonts.poppins(
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+          ),
         ),
       ),
       body: GridView(
@@ -28,154 +31,187 @@ class _MyCategoryState extends State {
         ),
         padding: const EdgeInsets.all(15),
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(15),
-              ),
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Color.fromRGBO(0, 0, 0, 0.15),
-                  blurRadius: 8,
-                  offset: Offset(1, 2),
+          GestureDetector(
+            onTap: () {
+              bottomSheet();
+            },
+            onLongPress: () {
+              showMyDialogBox();
+            },
+            child: Container(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(15),
                 ),
-              ],
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromRGBO(0, 0, 0, 0.15),
+                    blurRadius: 8,
+                    offset: Offset(1, 2),
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                      height: 80,
+                      width: 80,
+                      padding: const EdgeInsets.all(20),
+                      // margin: const EdgeInsets.all(20),
+                      decoration: const BoxDecoration(
+                        color: Color.fromRGBO(214, 3, 3, 0.7),
+                        shape: BoxShape.circle,
+                      ),
+                      child: SvgPicture.asset('./assets/SVGimages/food.svg')),
+                  Text(
+                    "Food",
+                    style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
+          ),
+          GestureDetector(
+            onTap: () {
+              bottomSheet();
+            },
+            onLongPress: () {
+              showMyDialogBox();
+            },
+            child: Container(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(15),
+                ),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromRGBO(0, 0, 0, 0.15),
+                    blurRadius: 8,
+                    offset: Offset(1, 2),
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
                     height: 80,
                     width: 80,
                     padding: const EdgeInsets.all(20),
                     // margin: const EdgeInsets.all(20),
                     decoration: const BoxDecoration(
-                      color: Color.fromRGBO(214, 3, 3, 0.7),
+                      color: Color.fromRGBO(0, 148, 255, 0.7),
                       shape: BoxShape.circle,
                     ),
-                    child: SvgPicture.asset('./assets/SVGimages/food.svg')),
-                Text(
-                  "Food",
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
+                    child: SvgPicture.asset('./assets/SVGimages/fuel.svg'),
                   ),
-                ),
-              ],
+                  Text(
+                    "Fuel",
+                    style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-          Container(
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(15),
+          GestureDetector(
+            onTap: () {
+              bottomSheet();
+            },
+            onLongPress: () {
+              showMyDialogBox();
+            },
+            child: Container(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(15),
+                ),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromRGBO(0, 0, 0, 0.15),
+                    blurRadius: 8,
+                    offset: Offset(1, 2),
+                  ),
+                ],
               ),
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Color.fromRGBO(0, 0, 0, 0.15),
-                  blurRadius: 8,
-                  offset: Offset(1, 2),
-                ),
-              ],
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  height: 80,
-                  width: 80,
-                  padding: const EdgeInsets.all(20),
-                  // margin: const EdgeInsets.all(20),
-                  decoration: const BoxDecoration(
-                    color: Color.fromRGBO(0, 148, 255, 0.7),
-                    shape: BoxShape.circle,
-                  ),
-                  child: SvgPicture.asset('./assets/SVGimages/fuel.svg'),
-                ),
-                Text(
-                  "Fuel",
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(15),
-              ),
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Color.fromRGBO(0, 0, 0, 0.15),
-                  blurRadius: 8,
-                  offset: Offset(1, 2),
-                ),
-              ],
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  height: 80,
-                  width: 80,
-                  padding: const EdgeInsets.all(20),
-                  // margin: const EdgeInsets.all(20),
-                  decoration: const BoxDecoration(
-                    color: Color.fromRGBO(0, 174, 91, 0.7),
-                    shape: BoxShape.circle,
-                  ),
-                  child: SvgPicture.asset('./assets/SVGimages/medicine.svg'),
-                ),
-                Text(
-                  "Medicine",
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(15),
-              ),
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Color.fromRGBO(0, 0, 0, 0.15),
-                  blurRadius: 8,
-                  offset: Offset(1, 2),
-                ),
-              ],
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
                     height: 80,
                     width: 80,
                     padding: const EdgeInsets.all(20),
                     // margin: const EdgeInsets.all(20),
                     decoration: const BoxDecoration(
-                      color: Color.fromRGBO(241, 38, 197, 0.7),
+                      color: Color.fromRGBO(0, 174, 91, 0.7),
                       shape: BoxShape.circle,
                     ),
-                    child: SvgPicture.asset('./assets/SVGimages/shopping.svg')),
-                Text(
-                  "Shopping",
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
+                    child: SvgPicture.asset('./assets/SVGimages/medicine.svg'),
                   ),
+                  Text(
+                    "Medicine",
+                    style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              bottomSheet();
+            },
+            onLongPress: () {
+              showMyDialogBox();
+            },
+            child: Container(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(15),
                 ),
-              ],
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromRGBO(0, 0, 0, 0.15),
+                    blurRadius: 8,
+                    offset: Offset(1, 2),
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                      height: 80,
+                      width: 80,
+                      padding: const EdgeInsets.all(20),
+                      // margin: const EdgeInsets.all(20),
+                      decoration: const BoxDecoration(
+                        color: Color.fromRGBO(241, 38, 197, 0.7),
+                        shape: BoxShape.circle,
+                      ),
+                      child:
+                          SvgPicture.asset('./assets/SVGimages/shopping.svg')),
+                  Text(
+                    "Shopping",
+                    style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
@@ -212,8 +248,72 @@ class _MyCategoryState extends State {
     );
   }
 
+  Future<void> showMyDialogBox() async {
+    return await showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              "Delete Category",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.poppins(
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            content: Text(
+              "Are you sure you want to delete the selected category?",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.poppins(
+                fontSize: 12,
+              ),
+            ),
+            actions: [
+              ElevatedButton(
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(
+                    Color.fromRGBO(14, 161, 125, 1),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text(
+                  "Delete",
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              ElevatedButton(
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(
+                    Color.fromRGBO(140, 128, 128, 0.10),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text(
+                  "Cancel",
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ],
+          );
+        });
+  }
+
   void bottomSheet() {
     showModalBottomSheet(
+      isDismissible: false,
       isScrollControlled: true,
       context: context,
       builder: (BuildContext context) {
@@ -314,7 +414,9 @@ class _MyCategoryState extends State {
                   Container(
                     margin: const EdgeInsets.all(40),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
                       style: const ButtonStyle(
                         elevation: MaterialStatePropertyAll(2),
                         minimumSize: MaterialStatePropertyAll(
