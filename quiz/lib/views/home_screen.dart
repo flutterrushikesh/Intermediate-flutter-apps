@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz/views/math_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -92,45 +93,54 @@ class _HomeScreenState extends State {
               child: ListView.builder(
                 itemCount: subList.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    height: 80,
-                    margin: const EdgeInsets.only(top: 25),
-                    padding: const EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: const Color.fromRGBO(255, 237, 217, 1)),
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 45,
-                          width: 45,
-                          margin: const EdgeInsets.only(right: 15),
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: Colors.white,
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (_) => const Math(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      height: 80,
+                      margin: const EdgeInsets.only(top: 25),
+                      padding: const EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: const Color.fromRGBO(255, 237, 217, 1)),
+                      child: Row(
+                        children: [
+                          Container(
+                            height: 45,
+                            width: 45,
+                            margin: const EdgeInsets.only(right: 15),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: Colors.white,
+                            ),
+                            child: Text(
+                              subList[index]['logo'],
+                              style: GoogleFonts.dmSans(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700,
+                                color: subLogoColorList[
+                                    index % subLogoColorList.length],
+                              ),
+                            ),
                           ),
-                          child: Text(
-                            subList[index]['logo'],
+                          Text(
+                            subList[index]['sub'],
                             style: GoogleFonts.dmSans(
                               fontSize: 20,
                               fontWeight: FontWeight.w700,
-                              color: subLogoColorList[
-                                  index % subLogoColorList.length],
+                              color: const Color.fromRGBO(131, 76, 52, 1),
                             ),
                           ),
-                        ),
-                        Text(
-                          subList[index]['sub'],
-                          style: GoogleFonts.dmSans(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                            color: const Color.fromRGBO(131, 76, 52, 1),
-                          ),
-                        ),
-                        const Spacer(),
-                        const Icon(Icons.arrow_forward_ios)
-                      ],
+                          const Spacer(),
+                          const Icon(Icons.arrow_forward_ios)
+                        ],
+                      ),
                     ),
                   );
                 },

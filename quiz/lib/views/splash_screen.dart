@@ -22,7 +22,7 @@ class _SplashScreenState extends State {
             left: 80,
             child: GestureDetector(
               onTap: () {
-                Navigator.of(context).push(
+                Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
                     builder: (_) => const HomeScreen(),
                   ),
