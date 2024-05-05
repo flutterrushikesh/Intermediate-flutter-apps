@@ -188,6 +188,32 @@ class _ResultScreenState extends State {
               ],
             ),
           ),
+          Positioned(
+            left: 160,
+            top: 240,
+            child: Container(
+              alignment: Alignment.center,
+              height: 85,
+              width: 85,
+              decoration: const BoxDecoration(
+                color: Color.fromRGBO(250, 245, 241, 1),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromRGBO(0, 0, 0, 0.1),
+                  ),
+                ],
+                shape: BoxShape.circle,
+              ),
+              child: Text(
+                "M",
+                style: GoogleFonts.dmSans(
+                  color: const Color.fromRGBO(200, 60, 0, 1),
+                  fontSize: 40,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
