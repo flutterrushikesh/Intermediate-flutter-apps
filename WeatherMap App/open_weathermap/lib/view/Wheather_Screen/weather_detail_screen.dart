@@ -21,7 +21,7 @@ class _WeatherDetailScrennState extends State {
     final double screenHeight = MediaQuery.of(context).size.height;
 
     ///MEASURES A WIDTH OF SCREEN
-    final double screenWidth = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -99,7 +99,7 @@ class _WeatherDetailScrennState extends State {
                   "${Provider.of<WeatherController>(context).obj?.current!.tempC!}°",
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w300,
-                    fontSize: screenWidth * 0.1,
+                    fontSize: screenWidth * 0.15,
                     color: Colors.white,
                   ),
                 ),

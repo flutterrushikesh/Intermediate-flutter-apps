@@ -23,7 +23,7 @@ class _HomeScreenState extends State {
     final double screenHeight = MediaQuery.of(context).size.height;
 
     ///MEASURES A WIDTH OF SCREEN
-    final double screenWidth = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       backgroundColor: const Color.fromRGBO(75, 96, 128, 1),
@@ -76,6 +76,7 @@ class _HomeScreenState extends State {
                       onPressed: () {
                         Provider.of<WeatherController>(context, listen: false)
                             .isErrorCheck();
+                        getLocationController.clear();
                       },
                       style: const ButtonStyle(
                         backgroundColor: WidgetStatePropertyAll(
@@ -97,7 +98,7 @@ class _HomeScreenState extends State {
               : Provider.of<WeatherController>(context, listen: false)
                       .isInternetConnection
                   ? Padding(
-                      padding: EdgeInsets.all(screenHeight * 0.02),
+                      padding: EdgeInsets.all(screenHeight * 0.018),
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
@@ -108,6 +109,10 @@ class _HomeScreenState extends State {
                               controller: getLocationController,
                               cursorColor: Colors.black,
                               cursorWidth: 1.5,
+                              style: GoogleFonts.inter(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                              ),
                               decoration: InputDecoration(
                                 fillColor: Colors.white,
                                 filled: true,
@@ -135,7 +140,10 @@ class _HomeScreenState extends State {
                             SizedBox(
                               height: screenHeight * 0.15,
                             ),
-                            Image.asset('assets/images/search location.png'),
+                            Image.asset(
+                              'assets/images/search location.png',
+                              height: 350,
+                            ),
                           ],
                         ),
                       ),
@@ -182,6 +190,7 @@ class _HomeScreenState extends State {
                               Provider.of<WeatherController>(context,
                                       listen: false)
                                   .isChecknternetConnection();
+                              getLocationController.clear();
                             }
                           },
                           style: const ButtonStyle(
@@ -272,7 +281,7 @@ class _HomeScreenState extends State {
         label: Text(
           'Check Weather',
           style: GoogleFonts.poppins(
-            fontSize: screenWidth * 0.015,
+            fontSize: screenWidth * 0.035,
             fontWeight: FontWeight.w500,
           ),
         ),
