@@ -1,5 +1,3 @@
-// ignore_for_file: empty_catches
-
 import 'dart:convert';
 
 import 'package:open_weathermap/controller/api_key.dart';

@@ -15,7 +15,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScrennState extends State {
-  //calls the initState method. it calls the before the build method.
+  ///CALLS THE INITSTATE METHOD. IT CALL BEFORE THE BUILD METHOD.
   @override
   void initState() {
     // call that fuction because excution before the build method calls.
@@ -25,6 +25,9 @@ class _SplashScrennState extends State {
 
   @override
   Widget build(BuildContext context) {
+    ///MEASURE A WIDTH OF SCREEN.
+    final double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: const Color.fromRGBO(75, 96, 128, 1),
       body: Provider.of<WeatherController>(context).inProgress
@@ -40,11 +43,11 @@ class _SplashScrennState extends State {
                         color: Colors.red,
                         size: 30,
                       ),
-                      const SizedBox(width: 5),
+                      SizedBox(width: screenWidth * 0.02),
                       Text(
                         "You're offline",
                         style: GoogleFonts.poppins(
-                          fontSize: 16,
+                          fontSize: screenWidth * 0.041,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -73,7 +76,7 @@ class _SplashScrennState extends State {
                         }
                       },
                       style: const ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(
+                        backgroundColor: WidgetStatePropertyAll(
                           Color.fromRGBO(75, 96, 128, 1),
                         ),
                       ),

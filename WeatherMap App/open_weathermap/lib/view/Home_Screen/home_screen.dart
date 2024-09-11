@@ -1,5 +1,3 @@
-// ignore_for_file: use_build_context_synchronously
-import 'dart:developer';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,6 +19,12 @@ class _HomeScreenState extends State {
 
   @override
   Widget build(BuildContext context) {
+    ///MEASURE A HEIGHT OF SCREEN.
+    final double screenHeight = MediaQuery.of(context).size.height;
+
+    ///MEASURES A WIDTH OF SCREEN
+    final double screenWidth = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: const Color.fromRGBO(75, 96, 128, 1),
       body: Provider.of<WeatherController>(context).inProgress
@@ -30,9 +34,12 @@ class _HomeScreenState extends State {
                 color: Colors.white,
               ),
             )
-          //Else false it check the user entered city name search box empty then this block executes.
+
+          ///ELSE FALSE IT CHECK THE USER ENTERED CITY NAME SEARCH BOX EMPTY THEN THIS BLOCK EXECUETS.
+
           : Provider.of<WeatherController>(context).isError
-              //If any error found executes this block that is, alertbox.
+
+              ///IT ANY ERROR FOUND EXECUTES THIS BLOCK THAT IS ALERTBOX.
               ? AlertDialog(
                   title: Row(
                     children: [
@@ -49,7 +56,7 @@ class _HomeScreenState extends State {
                           'Please enter valid city name',
                           style: GoogleFonts.poppins(
                             // color: Colors.whi,
-                            fontSize: 16,
+                            fontSize: screenWidth * 0.041,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -59,7 +66,7 @@ class _HomeScreenState extends State {
                   content: Text(
                     '${Provider.of<WeatherController>(context, listen: false).obj.myError.myMessage}',
                     style: GoogleFonts.poppins(
-                      fontSize: 14,
+                      fontSize: screenWidth * 0.036,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -71,7 +78,7 @@ class _HomeScreenState extends State {
                             .isErrorCheck();
                       },
                       style: const ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(
+                        backgroundColor: WidgetStatePropertyAll(
                           Color.fromRGBO(75, 96, 128, 1),
                         ),
                       ),
@@ -90,12 +97,12 @@ class _HomeScreenState extends State {
               : Provider.of<WeatherController>(context, listen: false)
                       .isInternetConnection
                   ? Padding(
-                      padding: const EdgeInsets.all(8),
+                      padding: EdgeInsets.all(screenHeight * 0.02),
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
-                            const SizedBox(
-                              height: 40,
+                            SizedBox(
+                              height: screenHeight * 0.05,
                             ),
                             TextFormField(
                               controller: getLocationController,
@@ -125,8 +132,8 @@ class _HomeScreenState extends State {
                                 ),
                               ),
                             ),
-                            const SizedBox(
-                              height: 100,
+                            SizedBox(
+                              height: screenHeight * 0.15,
                             ),
                             Image.asset('assets/images/search location.png'),
                           ],
@@ -143,11 +150,11 @@ class _HomeScreenState extends State {
                             color: Colors.red,
                             size: 30,
                           ),
-                          const SizedBox(width: 5),
+                          SizedBox(width: screenWidth * 0.02),
                           Text(
                             "You're offline",
                             style: GoogleFonts.poppins(
-                              fontSize: 16,
+                              fontSize: screenWidth * 0.041,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -171,13 +178,14 @@ class _HomeScreenState extends State {
                                     .contains(ConnectivityResult.mobile) ||
                                 connectivityResult
                                     .contains(ConnectivityResult.wifi)) {
+                              // ignore: use_build_context_synchronously
                               Provider.of<WeatherController>(context,
                                       listen: false)
                                   .isChecknternetConnection();
                             }
                           },
                           style: const ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll(
+                            backgroundColor: WidgetStatePropertyAll(
                               Color.fromRGBO(75, 96, 128, 1),
                             ),
                           ),
@@ -208,6 +216,7 @@ class _HomeScreenState extends State {
               connectivityResult.contains(ConnectivityResult.wifi)) {
             //calls the getWeatherData method using provider.
             //and pass the user entered location to API.
+            // ignore: use_build_context_synchronously
             await Provider.of<WeatherController>(context, listen: false)
                 .getWeatherData(getLocationController.text);
 
@@ -215,11 +224,13 @@ class _HomeScreenState extends State {
               const Duration(seconds: 2),
               () async {
                 //call the inProgressCheck to false the condition.
+                // ignore: use_build_context_synchronously
                 Provider.of<WeatherController>(context, listen: false)
                     .inProgressCheck();
                 //if the stored value in WeatherController null && stored object's
                 //runtimeTimeType is Weathermodel then satisfy this condition &
                 //navigates following screen.
+                // ignore: use_build_context_synchronously
                 if (Provider.of<WeatherController>(context, listen: false)
                             .obj !=
                         null &&
@@ -261,7 +272,7 @@ class _HomeScreenState extends State {
         label: Text(
           'Check Weather',
           style: GoogleFonts.poppins(
-            fontSize: 15,
+            fontSize: screenWidth * 0.015,
             fontWeight: FontWeight.w500,
           ),
         ),

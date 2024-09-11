@@ -1,10 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:open_weathermap/controller/api_controller.dart';
 
 class WeatherController extends ChangeNotifier {
-  dynamic obj; //Stores a API retured object.
+  //STORES THE API RETURERN OBJ.
+  dynamic obj;
   bool inProgress = false; //To circularProgressBar.
   bool isError = false; //To check error.
   bool isInternetConnection = false; //To Check internetConnection.

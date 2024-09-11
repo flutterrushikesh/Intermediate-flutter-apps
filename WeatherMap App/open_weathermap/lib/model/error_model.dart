@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:open_weathermap/model/error_message_model.dart';
 
 class ErrorModel {

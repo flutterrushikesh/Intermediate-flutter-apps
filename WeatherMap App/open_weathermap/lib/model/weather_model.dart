@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:open_weathermap/model/current_model.dart';
 import 'package:open_weathermap/model/location_model.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:open_weathermap/controller/weather_controller.dart';
-import 'package:open_weathermap/view/home_screen.dart';
-import 'package:open_weathermap/view/splash_screen.dart';
-import 'package:open_weathermap/view/weather_detail_screen.dart';
+import 'package:open_weathermap/View/Home_Screen/home_screen.dart';
+import 'package:open_weathermap/View/Splash_Screen/splash_screen.dart';
+import 'package:open_weathermap/View/Wheather_Screen/weather_detail_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -16,9 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) {
-        return WeatherController();
-      },
+      create: (context) => WeatherController(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: const SplashScreen(),

@@ -17,6 +17,11 @@ class WeatherDetailScrenn extends StatefulWidget {
 class _WeatherDetailScrennState extends State {
   @override
   Widget build(BuildContext context) {
+    ///MEASURE A HEIGHT OF SCREEN.
+    final double screenHeight = MediaQuery.of(context).size.height;
+
+    ///MEASURES A WIDTH OF SCREEN
+    final double screenWidth = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -37,7 +42,7 @@ class _WeatherDetailScrennState extends State {
         title: Text(
           "${Provider.of<WeatherController>(context).obj?.location!.name}",
           style: GoogleFonts.poppins(
-            fontSize: 25,
+            fontSize: screenWidth * 0.062,
             color: Colors.white,
           ),
         ),
@@ -61,7 +66,7 @@ class _WeatherDetailScrennState extends State {
       ),
       backgroundColor: const Color.fromRGBO(39, 80, 69, 1),
       body: Padding(
-        padding: const EdgeInsets.all(15),
+        padding: EdgeInsets.all(screenHeight * 0.02),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -70,13 +75,12 @@ class _WeatherDetailScrennState extends State {
                   .split(' ')
                   .first,
               style: GoogleFonts.poppins(
-                // fontSize: ,
                 fontWeight: FontWeight.w500,
                 color: const Color.fromARGB(255, 196, 195, 195),
               ),
             ),
-            const SizedBox(
-              width: 5,
+            SizedBox(
+              width: screenWidth * 0.02,
             ),
             Text(
               '${Provider.of<WeatherController>(context).obj?.location!.localtime!}'
@@ -88,14 +92,14 @@ class _WeatherDetailScrennState extends State {
                 color: const Color.fromARGB(255, 196, 195, 195),
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: screenHeight * 0.03),
             Row(
               children: [
                 Text(
                   "${Provider.of<WeatherController>(context).obj?.current!.tempC!}°",
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w300,
-                    fontSize: 80,
+                    fontSize: screenWidth * 0.1,
                     color: Colors.white,
                   ),
                 ),
@@ -112,7 +116,7 @@ class _WeatherDetailScrennState extends State {
                         style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w500,
                           color: Colors.white,
-                          fontSize: 20,
+                          fontSize: screenWidth * 0.054,
                         ),
                       ),
                     ],
@@ -120,8 +124,8 @@ class _WeatherDetailScrennState extends State {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 50,
+            SizedBox(
+              height: screenHeight * 0.13,
             ),
             Card(
               elevation: 4,
@@ -160,13 +164,13 @@ class _WeatherDetailScrennState extends State {
 //Repeated Widget created here.
   Widget dataAndTitleWidget(String title, String data) {
     return Padding(
-      padding: const EdgeInsets.all(15),
+      padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.02),
       child: Column(
         children: [
           Text(
             data,
             style: GoogleFonts.poppins(
-              fontSize: 25,
+              fontSize: MediaQuery.of(context).size.width * 0.062,
               fontWeight: FontWeight.w500,
             ),
           ),
